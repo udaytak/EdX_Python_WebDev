@@ -10,5 +10,9 @@ def home():
 def david():
     return "Hello, David !"
 
+@app.route("/<string:name>")
+def hello(name):
+    return f"Hello {name}"
+
 if __name__ == "__main__":
     app.run(debug=True)
