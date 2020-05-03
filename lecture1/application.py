@@ -12,7 +12,8 @@ def david():
 
 @app.route("/<string:name>")
 def hello(name):
-    return f"Hello {name}"
+    name = name.capitalize()
+    return f"Hello, {name}"
 
 if __name__ == "__main__":
     app.run(debug=True)
