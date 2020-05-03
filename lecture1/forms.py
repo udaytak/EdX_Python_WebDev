@@ -8,5 +8,8 @@ def forms():
 
 @app.route("/hello", methods=["GET","POST"])
 def hello():
-    name = request.form.get("name")
-    return render_template("hello.html", name=name)
+    if request.method == "GET":
+        return "Please Submit the forms instead"
+    else:
+        name = request.form.get("name")
+        return render_template("hello.html", name=name)
